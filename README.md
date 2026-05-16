@@ -8,7 +8,7 @@ Learn basic CI/CD using GitHub Actions.
 
 `
 ## Workflow YAML
-
+```bash
 name: My First GitHub Actions Workflow
 
 on:
@@ -39,3 +39,4 @@ jobs:
         run: |
           echo "Runner OS: $RUNNER_OS"
         
+```
