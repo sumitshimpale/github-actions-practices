@@ -1,0 +1,18 @@
+name: manual Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment: 
+        description: "Enter env name"
+        required: true
+        default: "staging"
+
+jobs:
+  manual-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print environment
+        run: |
+          echo "selected environment: ${{ github.event.inputs.environment }}"
