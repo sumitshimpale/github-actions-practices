@@ -1,3 +1,14 @@
+# Day 40 – First GitHub Actions Workflow
+
+## Objective
+Learn basic CI/CD using GitHub Actions.
+`
+
+<img width="1279" height="611" alt="image" src="https://github.com/user-attachments/assets/1831e8d3-0a6c-4e75-9937-ac4bb3272658" />
+
+`
+## Workflow YAML
+```bash
 name: My First GitHub Actions Workflow
 
 on:
@@ -28,3 +39,4 @@ jobs:
         run: |
           echo "Runner OS: $RUNNER_OS"
         
+```
