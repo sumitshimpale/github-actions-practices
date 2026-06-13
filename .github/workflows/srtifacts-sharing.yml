@@ -1,0 +1,36 @@
+name: Artifact Sharing
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  producer:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - run: echo "Generated from Job1" > output.txt
+
+      - uses: actions/upload-artifact@v4
+
+        with:
+          name: shared-file
+          path: output.txt
+
+  consumer:
+
+    needs: producer
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/download-artifact@v4
+
+        with:
+          name: shared-file
+
+      - run: |
+          cat output.txt
